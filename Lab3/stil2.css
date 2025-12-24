@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.slider-control {
+    position: relative;
+    width: 120px;
+    height: 35px;
+    background-color: #66cc00;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.arrow {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-right: 3px solid white;
+    border-top: 3px solid white;
+    transition: all 0.3s ease;
+}
+
+.left-arrow {
+    position: relative;
+    left: 10px;
+    bottom: -7px;
+    transform: rotate(-135deg);
+}
+
+.right-arrow {
+    position: relative;
+    right: -100px;
+    bottom: 7px;
+    transform: rotate(45deg);
+}
+
+.slider-control:hover .arrow {
+    width: 6px;
+    height: 6px;
+    border-width: 2px;
+    opacity: 0.5;
+}

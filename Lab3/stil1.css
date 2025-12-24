@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.animation-container {
+    width: 150px;
+    height: 350px;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dot-sequence {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80%;
+    width: 100%;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    transform: translateX(70px); 
+}
+
+.animation-container:hover .dot {
+    animation: hover-wave 0.7s forwards; 
+    animation-delay: calc(var(--dot-index) * 0.1s); 
+}
+
+@keyframes hover-wave {
+    0% {
+        transform: translateX(70px);
+    }
+    
+    30% {
+        transform: translateX(60px); 
+        animation-timing-function: ease-in;
+    }
+    
+    100% {
+        transform: translateX(70px);
+    }
+}

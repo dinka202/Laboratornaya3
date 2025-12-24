@@ -1,0 +1,108 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #660099;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.snow-globe {
+    position: relative;
+    width: 250px;
+    height: 350px;
+}
+
+.globe {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.8);
+    margin: 0 auto 20px;
+    overflow: hidden;
+}
+
+.base {
+    width: 100px;
+    height: 60px;
+    background: #990033;
+    border-radius: 0 0 15px 15px;
+    margin: 0 auto;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
+    transform: translateY(-30px);
+}
+
+.house {
+    position: absolute;
+    bottom: 30px;
+    left: 70px;
+    transform: translateY(23px);
+    width: 60px;
+    height: 50px;
+    background: #663333;
+    z-index: 2;
+}
+
+.house::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 20px solid #cc0033;
+    top: -20px;
+    left: 0;
+}
+
+.snowflake {
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+.snowflake:nth-child(1) {
+    left: 20%;
+    animation-duration: 4s;
+}
+
+.snowflake:nth-child(2) {
+    left: 40%;
+    animation-duration: 5s;
+    animation-delay: 1s;
+}
+
+.snowflake:nth-child(3) {
+    left: 60%;
+    animation-duration: 3.5s;
+    animation-delay: 2s;
+}
+
+.snowflake:nth-child(4) {
+    left: 30%;
+    animation-duration: 4.5s;
+    animation-delay: 0.5s;
+}
+
+.snowflake:nth-child(5) {
+    left: 70%;
+    animation-duration: 3s;
+    animation-delay: 1.5s;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-20px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(220px) rotate(360deg);
+        opacity: 0;
+    }
+}
